@@ -1,0 +1,6 @@
+C:\Users\install\Source\Repos\Hurst\Hurst\bin\Debug\Hurst.pdb
+C:\Users\install\Source\Repos\Hurst\Hurst\obj\Debug\Hurst.pdb
+C:\Users\install\Source\Repos\Hurst\Hurst\bin\Debug\Hurst.dll.config
+C:\Users\install\Source\Repos\Hurst\Hurst\bin\Debug\Hurst.dll
+C:\Users\install\Source\Repos\Hurst\Hurst\obj\Debug\Hurst.dll
+C:\Users\install\Source\Repos\Hurst\Hurst\obj\Debug\Hurst.csprojResolveAssemblyReference.cache

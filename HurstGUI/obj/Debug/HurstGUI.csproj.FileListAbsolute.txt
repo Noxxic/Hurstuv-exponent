@@ -1,0 +1,12 @@
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.csprojResolveAssemblyReference.cache
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.Properties.Resources.resources
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.csproj.GenerateResource.Cache
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\HurstGUI.exe.config
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\HurstGUI.exe
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\HurstGUI.pdb
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\Hurst.pdb
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.exe
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.pdb
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\Hurst.dll
+C:\Users\install\Source\Repos\Hurst\HurstGUI\bin\Debug\Hurst.dll.config
+C:\Users\install\Source\Repos\Hurst\HurstGUI\obj\Debug\HurstGUI.Form1.resources
