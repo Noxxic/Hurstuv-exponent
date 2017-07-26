@@ -1,2 +1,2 @@
-# hHurst_exp
+# Hurst_exp
 neco
