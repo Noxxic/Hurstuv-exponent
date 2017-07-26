@@ -32,16 +32,17 @@ namespace HurstGUI
         private void buttonVypocti_Click(object sender, EventArgs e)
         {
             OpenFileDialog browser = new OpenFileDialog();
-            browser.Filter = ("Text File|*.txt");
+            browser.Filter = ("Text File|*.txt|Skvori soubor|*.csv");
             browser.FilterIndex = 1;
-
+            
             string path = "";
 
             if (browser.ShowDialog() == DialogResult.OK)
             {
                 path = browser.FileName;
             }
-            var data = NactiData(path);
+            var data = path.Last() == 't' ? NactiData(path) : CtiCSV(path);
+           // var data = NactiData(path);
             vysledky = hurst.Spocti_Hurstuv_Koeficient(data);
             Grafuj(vysledky);
             lbl_Hurst.Text += vysledky.hurst.ToString();
@@ -70,6 +71,17 @@ namespace HurstGUI
             chartHurst.Series["Data"].BorderWidth = 3;
             chartHurst.Legends.Clear();
             //chartHurst.ChartAreas["0"].AxisX.Interval = 1;
+        }
+        public List<double> CtiCSV(string path)
+        {
+            List<double> dataCSV = new List<double>();
+            using(var file = File.OpenText(path))
+            {
+                string line = file.ReadLine();
+                while ((line = file.ReadLine())!= null)                 
+                    dataCSV.Add(double.Parse(line.Split(';')[4].Replace('\"',' ')));
+                return dataCSV;
+            }
         }
     }
 }

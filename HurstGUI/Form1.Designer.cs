@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonVypocti = new System.Windows.Forms.Button();
             this.chartHurst = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_Hurst = new System.Windows.Forms.Label();
             this.lbl_rovnice = new System.Windows.Forms.Label();
+            this.lbl_Hurst = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartHurst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -55,7 +55,7 @@
             this.buttonVypocti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonVypocti.Location = new System.Drawing.Point(0, 0);
             this.buttonVypocti.Name = "buttonVypocti";
-            this.buttonVypocti.Size = new System.Drawing.Size(67, 41);
+            this.buttonVypocti.Size = new System.Drawing.Size(67, 42);
             this.buttonVypocti.TabIndex = 0;
             this.buttonVypocti.Text = "Proveď";
             this.buttonVypocti.UseVisualStyleBackColor = true;
@@ -63,18 +63,18 @@
             // 
             // chartHurst
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartHurst.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartHurst.ChartAreas.Add(chartArea1);
             this.chartHurst.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartHurst.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chartHurst.Legends.Add(legend1);
             this.chartHurst.Location = new System.Drawing.Point(0, 0);
             this.chartHurst.Name = "chartHurst";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartHurst.Series.Add(series2);
-            this.chartHurst.Size = new System.Drawing.Size(284, 217);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartHurst.Series.Add(series1);
+            this.chartHurst.Size = new System.Drawing.Size(284, 216);
             this.chartHurst.TabIndex = 1;
             this.chartHurst.Text = "chart1";
             // 
@@ -93,7 +93,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(284, 262);
-            this.splitContainer1.SplitterDistance = 217;
+            this.splitContainer1.SplitterDistance = 216;
             this.splitContainer1.TabIndex = 2;
             // 
             // splitContainer2
@@ -109,7 +109,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.buttonVypocti);
-            this.splitContainer2.Size = new System.Drawing.Size(284, 41);
+            this.splitContainer2.Size = new System.Drawing.Size(284, 42);
             this.splitContainer2.SplitterDistance = 213;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -120,17 +120,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(213, 41);
+            this.panel1.Size = new System.Drawing.Size(213, 42);
             this.panel1.TabIndex = 0;
-            // 
-            // lbl_Hurst
-            // 
-            this.lbl_Hurst.AutoSize = true;
-            this.lbl_Hurst.Location = new System.Drawing.Point(13, 4);
-            this.lbl_Hurst.Name = "lbl_Hurst";
-            this.lbl_Hurst.Size = new System.Drawing.Size(97, 13);
-            this.lbl_Hurst.TabIndex = 0;
-            this.lbl_Hurst.Text = "Hustův exponent:  ";
             // 
             // lbl_rovnice
             // 
@@ -141,6 +132,15 @@
             this.lbl_rovnice.TabIndex = 1;
             this.lbl_rovnice.Text = "Rovnice přímky: ";
             // 
+            // lbl_Hurst
+            // 
+            this.lbl_Hurst.AutoSize = true;
+            this.lbl_Hurst.Location = new System.Drawing.Point(13, 4);
+            this.lbl_Hurst.Name = "lbl_Hurst";
+            this.lbl_Hurst.Size = new System.Drawing.Size(97, 13);
+            this.lbl_Hurst.TabIndex = 0;
+            this.lbl_Hurst.Text = "Hustův exponent:  ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,7 +148,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hurst GUI";
             ((System.ComponentModel.ISupportInitialize)(this.chartHurst)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

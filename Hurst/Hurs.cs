@@ -20,7 +20,7 @@ namespace Hurst_exp
             Dictionary<char, List<double>> body = new Dictionary<char, List<double>>(); //slovník bodů
             body.Add('X', new List<double>()); //Xové souřadnice
             body.Add('Y', new List<double>()); //Yové souřadnice
-            int max = 8; //Velikost počáteční množiny bodů
+            int max = 9; //Velikost počáteční množiny bodů
             while (true)
             {
                 var tmp_data = new List<double>(); //Ořezaná množina vstupních dat
@@ -31,7 +31,7 @@ namespace Hurst_exp
                 body['Y'].Add(res.Item2); //Přidání souřadnic bodu do slovníku bodů
                 if (max >= vstupni_data.Count) //Pokud je velikost množiny větší než velikost vstupních dat, tak konec
                     break;
-                max = max+8 >= vstupni_data.Count ? vstupni_data.Count : max + 8; //Zvětšení velikosti ořezané mbnožiny
+                max = max+9 >= vstupni_data.Count ? vstupni_data.Count : max + 9; //Zvětšení velikosti ořezané mbnožiny
             }
             var ds = new XYDataSet(body['X'], body['Y']);
 
