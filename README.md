@@ -1,2 +1,3 @@
 # Hurst_exp
-neco
+Hurstův exponent, C#
+Kapicová, Hacmac, Toroková a spol.
