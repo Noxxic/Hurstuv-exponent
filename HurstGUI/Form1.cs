@@ -31,15 +31,14 @@ namespace HurstGUI
         public static List<double> NactiDataFixed(string path)
         {
             string radek;
-            double cislo;
 
             List<double> data = new List<double>();
             var filestream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             var file = new StreamReader(filestream, Encoding.UTF8, true, 128);
             while ((radek = file.ReadLine()) != null)
             {
-                Double.TryParse(radek, out cislo);
-                data.Add(Convert.ToDouble(cislo));
+                radek = radek.Replace(".", ",");
+                data.Add(Convert.ToDouble(radek));
             }
             return data;
         }
