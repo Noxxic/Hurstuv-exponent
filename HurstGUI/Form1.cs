@@ -20,7 +20,6 @@ namespace HurstGUI
 
         public Form1()
         {
-            
             InitializeComponent();
             chartHurst.Series.Clear();
             lbl_Hurst.Text = "Hurstův exponent: ";
@@ -29,34 +28,55 @@ namespace HurstGUI
 
         public static List<double> NactiData(string path) => (from radek in File.ReadAllLines(path) select Convert.ToDouble(radek)).ToList(); //Načítá data ze souboru
 
+        public static List<double> NactiDataFixed(string path)
+        {
+            string radek;
+            double cislo;
+
+            List<double> data = new List<double>();
+            var filestream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            var file = new StreamReader(filestream, Encoding.UTF8, true, 128);
+            while ((radek = file.ReadLine()) != null)
+            {
+                Double.TryParse(radek, out cislo);
+                data.Add(Convert.ToDouble(cislo));
+            }
+            return data;
+        }
+
         private void buttonVypocti_Click(object sender, EventArgs e)
         {
             OpenFileDialog browser = new OpenFileDialog();
             browser.Filter = ("Text File|*.txt|CSV File|*.csv");
             browser.FilterIndex = 1;
-            
+
             string path = "";
 
             if (browser.ShowDialog() == DialogResult.OK)
             {
                 path = browser.FileName;
             }
-            var data = path.Last() == 't' ? NactiData(path) : CtiCSV(path);
-           
-            vysledky = hurst.Spocti_Hurstuv_Koeficient(data);
-            Grafuj(vysledky);
-            lbl_Hurst.Text += vysledky.hurst.ToString();
-            lbl_rovnice.Text += string.Format("y = {0} * x + {1}", vysledky.hurst,vysledky.YIntercept);
 
-            MessageBox.Show(hurst.Spocti_Hurstuv_Koeficient(data).hurst.ToString(), "husrt", MessageBoxButtons.OK);
+            try
+            {
+                var data = path.Last() == 't' ? NactiDataFixed(path) : CtiCSV(path);
 
+                vysledky = hurst.Spocti_Hurstuv_Koeficient(data);
+                Grafuj(vysledky);
+                lbl_Hurst.Text += vysledky.hurst.ToString();
+                lbl_rovnice.Text += string.Format("y = {0} * x + {1}", vysledky.hurst, vysledky.YIntercept);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nesprávný formát vstupního souboru s daty", "Špatný formát", MessageBoxButtons.OK);
+            }
         }
 
         public void Grafuj(Hurst_Result result)
         {
             chartHurst.Series.Add("Primka");
             chartHurst.Series["Primka"].XValueType = ChartValueType.Double;
-            chartHurst.Series["Primka"].Points.AddXY(result.X.Min(),result.rovnicePrimky(result.X.Min()));
+            chartHurst.Series["Primka"].Points.AddXY(result.X.Min(), result.rovnicePrimky(result.X.Min()));
             chartHurst.Series["Primka"].Points.AddXY(result.X.Max(), result.rovnicePrimky(result.X.Max()));
             chartHurst.Series["Primka"].ChartType = SeriesChartType.Line;
             chartHurst.Series["Primka"].BorderWidth = 3;
@@ -75,11 +95,11 @@ namespace HurstGUI
         public List<double> CtiCSV(string path)
         {
             List<double> dataCSV = new List<double>();
-            using(var file = File.OpenText(path))
+            using (var file = File.OpenText(path))
             {
                 string line = file.ReadLine();
-                while ((line = file.ReadLine())!= null)                 
-                    dataCSV.Add(double.Parse(line.Split(';')[4].Replace('\"',' ')));
+                while ((line = file.ReadLine()) != null)
+                    dataCSV.Add(double.Parse(line.Split(';')[4].Replace('\"', ' ')));
                 return dataCSV;
             }
         }
