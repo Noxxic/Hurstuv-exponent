@@ -22,7 +22,7 @@ namespace HurstGUI
         {
             InitializeComponent();
             chartHurst.Series.Clear();
-            lbl_Hurst.Text = "Hurstův exponent: ";
+            lbl_Hurst.Text = "Hurstův exponentt: ";
             lbl_rovnice.Text = "Rovnice přímky: ";
         }
 
